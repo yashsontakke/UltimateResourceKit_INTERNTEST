@@ -5,7 +5,7 @@ body {
   }
   .main-container{
     display:flex;
-    flex-direction:column
+    flex-direction:row
   }
  
   
@@ -84,11 +84,28 @@ body {
     border: 1px solid #ccc;
   }
 
-@media screen and (min-width: 760px) {
+  
+ 
+@media screen and (max-width: 760px) {
     
     .main-container {
-        flex-direction: row;
+        flex-direction: column;
     }
+    .profile-container {
+        width: 100%; /* Take full width when screen size is small */
+        text-align: center; /* Center the content within the .profile-container */
+      }
+      .profile{
+        justify-content:center;
+      }
+      .strategy-container {
+        width: 100%;
+        padding:3%
+      }
+      /* .mid-container{
+        width:400px
+      } */
+
   }
   
  

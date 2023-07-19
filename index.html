@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Chart.js Example</title>
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <div style="display: flex;">
+
+
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+
+
+    <h1 class="clr" >yash</h1>
+    <div class="main-container">
         <div class="profile-container">
 
 
             <div style="display: flex; align-items: center;">
-                <img style="height: 80px; margin-right: 20px;" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                <img style="height: 80px; margin-right: 20px;"
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
                 <div>
                     <h2 style="margin: 0;">Hi Mike</h2>
                     <p style="margin: 0;">Welcome</p>
                 </div>
             </div>
-            
+
             <div>
                 <p>Today</p>
                 <div style="margin-bottom: 10px;">
@@ -35,64 +44,64 @@
                 </div>
                 <div style="margin-bottom: 10px;">
                     <h4 style="margin: 0;">$1892</h4>
-                    <p  style="margin: 0; ;font-size: 12px;
+                    <p style="margin: 0; ;font-size: 12px;
                     color: #888;">Total-interest</p>
                 </div>
-                
+
             </div>
-            
-         
-          <div>
-            <p>Recent transaction</p>
-            <div class="transaction">
-                <div class="date">2020-00-07</div>
-                <div>Description: Transfer to Bank-XXX11</div>
-              </div>
-              <div class="transaction">
-                <div class="date">203-07-21</div>
-                <div>Description: Transfer to Bank-J0X11</div>
-              </div>
-              <div class="transaction">
-                <div class="date">203-07-21</div>
-                <div>Description: Transfer to Bank-XXXX11</div>
-              </div>
-              <select id="fruitSelect">
-                <option value="apple">Apple</option>
-                <option value="banana">Banana</option>
-                <option value="orange">Orange</option>
-                <option value="grape">Grape</option>
-              </select>
-              
-          </div>
-          
-          
+
+
+            <div>
+                <p>Recent transaction</p>
+                <div class="transaction">
+                    <div class="date">2020-00-07</div>
+                    <div>Description: Transfer to Bank-XXX11</div>
+                </div>
+                <div class="transaction">
+                    <div class="date">203-07-21</div>
+                    <div>Description: Transfer to Bank-J0X11</div>
+                </div>
+                <div class="transaction">
+                    <div class="date">203-07-21</div>
+                    <div>Description: Transfer to Bank-XXXX11</div>
+                </div>
+                <select id="fruitSelect">
+                    <option value="apple">Apple</option>
+                    <option value="banana">Banana</option>
+                    <option value="orange">Orange</option>
+                    <option value="grape">Grape</option>
+                </select>
+
+            </div>
+
+
         </div>
         <div class="mid-container" style="display: flex ; flex-direction: column; width: 500px;">
             <p style="font-size: 12px;">Retirement Income</p>
             <h4 style="margin-top: 0px;">Starting Year 2057</h4>
-            <div style="display: flex; justify-content:space-between; width: 500px; " class="goal" >
-                <div >
-                 <h4>$300000</h4>
-                 <p style="font-size: 12px ; color: gray;">my goal</p>
-                 <hr>
-                </div>
-                <div >
-                 <h4>$300000</h4>
-                 <p style="font-size: 12px ; color: gray;">my goal</p>
-                 <hr>
+            <div style="display: flex; justify-content:space-between; width: 500px; ">
+                <div>
+                    <h4>$300000</h4>
+                    <p style="font-size: 12px ; color: gray;">my goal</p>
+                    <hr>
                 </div>
                 <div>
-                 <h4>$300000</h4>
-                 <p style="font-size: 12px ; color: gray;">my goal</p>
-                 <hr>
+                    <h4>$300000</h4>
+                    <p style="font-size: 12px ; color: gray;">my goal</p>
+                    <hr>
                 </div>
-                
-             </div>
-             <div style="width: 500px;">
+                <div>
+                    <h4>$300000</h4>
+                    <p style="font-size: 12px ; color: gray;">my goal</p>
+                    <hr>
+                </div>
+
+            </div>
+            <div style="width: 500px;">
                 <canvas id="myChart" width="300" height="150"></canvas> <!-- Adjust width and height here -->
-              </div>
-         </div>
-         <div class="strategy-container">
+            </div>
+        </div>
+        <div class="strategy-container">
             <h1>Retirement Strategy</h1>
             <form>
                 <div class="form-group">
@@ -122,66 +131,66 @@
                 <button type="submit">Update</button>
             </form>
         </div>
-    
     </div>
     <script src="script.js"></script>
     <script>
-      var ctx = document.getElementById("myChart").getContext("2d");
-      var myChart = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: ["2023", "2024", "2025", "2026", "2027"],
-          datasets: [
-            {
-              label: "Employer",
-              data: [10, 15, 20, 25, 30],
-              backgroundColor: "rgba(255, 99, 132, 0.6)",
-              borderColor: "rgba(255, 99, 132, 1)",
-              borderWidth: 1,
-              stacked: true,
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["2023", "2024", "2025", "2026", "2027"],
+                datasets: [
+                    {
+                        label: "Employer",
+                        data: [10, 15, 20, 25, 30],
+                        backgroundColor: "rgba(255, 99, 132, 0.6)",
+                        borderColor: "rgba(255, 99, 132, 1)",
+                        borderWidth: 1,
+                        stacked: true,
+                    },
+                    {
+                        label: "Employee",
+                        data: [5, 10, 15, 20, 25],
+                        backgroundColor: "rgba(54, 162, 235, 0.6)",
+                        borderColor: "rgba(54, 162, 235, 1)",
+                        borderWidth: 1,
+                        stacked: true,
+                    },
+                    {
+                        label: "Total Interest",
+                        data: [5, 10, 15, 20, 25],
+                        backgroundColor: "rgba(75, 192, 192, 0.6)",
+                        borderColor: "rgba(75, 192, 192, 1)",
+                        borderWidth: 1,
+                        stacked: true,
+                    },
+                ],
             },
-            {
-              label: "Employee",
-              data: [5, 10, 15, 20, 25],
-              backgroundColor: "rgba(54, 162, 235, 0.6)",
-              borderColor: "rgba(54, 162, 235, 1)",
-              borderWidth: 1,
-              stacked: true,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Contributions Over Time",
+                    },
+                },
+                indexAxis: "x",
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                    },
+                },
+                tooltips: {
+                    enabled: true,
+                    mode: "index",
+                    intersect: false,
+                },
             },
-            {
-              label: "Total Interest",
-              data: [5, 10, 15, 20, 25],
-              backgroundColor: "rgba(75, 192, 192, 0.6)",
-              borderColor: "rgba(75, 192, 192, 1)",
-              borderWidth: 1,
-              stacked: true,
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            title: {
-              display: true,
-              text: "Contributions Over Time",
-            },
-          },
-          indexAxis: "x",
-          scales: {
-            x: {
-              stacked: true,
-            },
-            y: {
-              stacked: true,
-              beginAtZero: true,
-            },
-          },
-          tooltips: {
-            enabled: true,
-            mode: "index",
-            intersect: false,
-          },
-        },
-      });
+        });
     </script>
-  </body>
+</body>
+
 </html>

@@ -3,6 +3,11 @@ body {
     margin: 0;
     padding: 0;
   }
+  .main-container{
+    display:flex;
+    flex-direction:column
+  }
+ 
   
   .mid-container {
     width: 30%;
@@ -73,11 +78,18 @@ body {
   label {
     font-weight: bold;
   }
-  
   input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
   }
+
+@media screen and (min-width: 760px) {
+    
+    .main-container {
+        flex-direction: row;
+    }
+  }
   
+ 
 

@@ -149,32 +149,6 @@ body {
   font-size: 0.5em;
 }
   
- 
-@media screen and (max-width: 760px) {
-  .sidenav {
-    display: none; /* Hide the side navbar for smaller screens */
-  }
-
-  
-    .main-container {
-        flex-direction: column;
-    }
-    .profile-container {
-        width: 100%; /* Take full width when screen size is small */
-        text-align: center; /* Center the content within the .profile-container */
-      }
-      .profile{
-        justify-content:center;
-      }
-      .strategy-container {
-        width: 100%;
-        padding:3%
-      }
-      /* .mid-container{
-        width:400px
-      } */
-
-  }
   
   .sidenav {
     height: 100%;
@@ -245,11 +219,28 @@ body {
   }
 
 
-/* Media query for screens with a width of 500 pixels or less */
-/* Existing styles for .sidenav and other elements */
-
-/* Media query for screens with a width of 500 pixels or less */
+/* Media query for screens with a width of 760 pixels or less */
 @media screen and (max-width: 760px) {
+
+  .sidenav {
+    display: none; /* Hide the side navbar for smaller screens */
+  }
+
+  
+    .main-container {
+        flex-direction: column;
+    }
+    .profile-container {
+        width: 100%; /* Take full width when screen size is small */
+        text-align: center; /* Center the content within the .profile-container */
+      }
+      .profile{
+        justify-content:center;
+      }
+      .strategy-container {
+        width: 100%;
+        padding:3%
+      }
 
   .income-container {
     flex-direction: column; /* Items stack vertically */

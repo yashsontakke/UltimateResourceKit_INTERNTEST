@@ -70,3 +70,16 @@ var ctx = document.getElementById("myChart").getContext("2d");
                 },
             },
         });
+
+        const progressValue = 75;
+
+
+        const progressCircle = document.querySelector('.progress-circle');
+        const progress = document.querySelector('.progress');
+    
+        const radius = parseInt(progressCircle.getAttribute('r'));
+        const circumference = 2 * Math.PI * radius;
+        const offset = circumference - (progressValue / 100) * circumference;
+    
+        progress.setAttribute('stroke-dasharray', `${circumference} ${circumference}`);
+        progress.setAttribute('stroke-dashoffset', offset);

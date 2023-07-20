@@ -8,7 +8,6 @@ body {
   flex-direction:row
 }
 
-
 .mid-container {
   width: 30%;
   max-width: 500px;
@@ -281,6 +280,17 @@ font-size: 0.5em;
     font-size: 20px;
     color: #818181;
     margin: 0 5px; /* Add spacing between links */
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .unvisible {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .hide {
+      display: none; /* This will hide the element when the screen size is less than 760px */
   }
 }
 

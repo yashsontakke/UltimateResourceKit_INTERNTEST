@@ -1,0 +1,178 @@
+
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    width:300px
+    }
+    
+    .single-chart {
+    width: 33%;
+    justify-content: space-around ;
+    }
+    
+    .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+    }
+    
+    .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+    }
+    
+    .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+    }
+    
+    @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+    }
+    
+    .circular-chart.orange .circle {
+    stroke: #ff9f00;
+    }
+    
+    .circular-chart.green .circle {
+    stroke: #4CC790;
+    }
+    
+    .circular-chart.blue .circle {
+    stroke: #3c9ee5;
+    }
+    
+    .percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    }
+    
+..............................
+    .income-container {
+        display: flex;
+        justify-content: space-between;
+        /* width: 500px; */
+        flex-direction: row;
+      }
+      
+      .second-row {
+        display: flex;
+        justify-content: space-between; /* Horizontally align the second-row items */
+        width: 100%; /* Add this to ensure the second-row items fill the entire container width */
+      }
+      .first-row{
+        width:220px;
+      }
+      
+      .item {
+        flex: 1; /* Add this to make the items equally distributed horizontally */
+        margin: 0 5px; /* Add a small margin between the items for equal distance */
+      }
+      ..............
+ 
+      
+      
+      .form-group {
+        margin-bottom: 10px;
+      }
+      
+      label {
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      ..............
+      .sidenav {
+        height: 100%;
+        width: 70px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      
+      /* Styles for links inside the sidebar (top links) */
+      .sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+      }
+      
+      /* Styles for the bottom links */
+      .sidebar .bottom-links {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 15%
+      }
+      
+      .sidebar.bottom-links a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+      }
+      
+      /* Styles for the links when hovered */
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      @media screen and (max-width: 760px) {
+
+.income-container {
+    flex-direction: column; /* Items stack vertically */
+    width:100%;
+  }
+  
+  .item {
+    flex-basis: 100%; /* Each div takes the full width in a new row */
+    width:50%;
+  }
+  
+  .second-row {
+    display: flex;
+    justify-content: space-between; /* Horizontally align the second-row items */
+    width:100%
+  }
+  /* New styles for the footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #111;
+    display: flex; /* Use flexbox to arrange content horizontally */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+  }
+
+  .footer a {
+    padding: 6px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    margin: 0 5px; /* Add spacing between links */
+  }
+  
+}
+..........

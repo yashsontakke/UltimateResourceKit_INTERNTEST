@@ -1,0 +1,51 @@
+.colored-div {
+    height: 100px;
+    width: 50%;
+    float: left;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: #D3CEFF; /* Hexadecimal color code */
+    margin: 10px 0;
+}
+.clear {
+    clear: both;
+}
+
+.item p{
+  font-size:12px;
+  color :#CACACA
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-between; /* Adjust this to your desired alignment */
+}
+
+.hori-colored-div {
+    /* Add your styling for colored-div here */
+    /* Example styles: */
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.hori-item {
+    /* Add your styling for item here */
+    /* Example styles: */
+    text-align: center;
+}
+
+.vertical{
+    display:none;
+}
+
+@media screen and (max-width: 760px) {
+    .horizontal{
+        display:none;
+    }
+    .vertical{
+        display:inline;
+    }
+}

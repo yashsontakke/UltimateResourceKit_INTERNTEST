@@ -5,7 +5,7 @@ body {
 }
 .main-container{
   display:flex;
-  flex-direction:row
+  flex-wrap: wrap;
 }
 
 .mid-container {
@@ -224,15 +224,15 @@ font-size: 0.5em;
 .sidenav {
   display: none; /* Hide the side navbar for smaller screens */
 }
+.content{
+  display:flex;
 
+}
 
   .main-container {
       flex-direction: column;
   }
-  .profile-container {
-      width: 100%; /* Take full width when screen size is small */
-      text-align: center; /* Center the content within the .profile-container */
-    }
+ 
     .profile{
       justify-content:center;
     }

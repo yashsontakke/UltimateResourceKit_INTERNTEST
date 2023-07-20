@@ -18,7 +18,7 @@ var ctx = document.getElementById("myChart").getContext("2d");
         var myChart = new Chart(ctx, {
             type: "bar",
             data: {
-                labels: ["2023", "2024", "2025", "2026", "2027"],
+                labels: ["20", "25", "30", "35", "40"],
                 datasets: [
                     {
                         label: "Employer",
@@ -47,28 +47,52 @@ var ctx = document.getElementById("myChart").getContext("2d");
                 ],
             },
             options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: "Contributions Over Time",
-                    },
-                },
-                indexAxis: "x",
-                scales: {
-                    x: {
-                        stacked: true,
-                    },
-                    y: {
-                        stacked: true,
-                        beginAtZero: true,
-                    },
-                },
-                tooltips: {
-                    enabled: true,
-                    mode: "index",
-                    intersect: false,
-                },
-            },
+              plugins: {
+                  title: {
+                      display: true,
+                      text: "Contributions Over Time",
+                  },
+              },
+              indexAxis: "x",
+              scales: {
+                  x: {
+                      stacked: true,
+                      grid: {
+                          display: false, // Remove vertical lines
+                      },
+                  },
+                  y: {
+                      stacked: true,
+                      beginAtZero: true,
+                      grid: {
+                          borderDash: [5, 5], // Make horizontal lines dashed
+                      },
+                      ticks: {
+                          // Use the callback function to format the labels as dollars
+                          callback: function (value, index, values) {
+                              if (value === 0) {
+                                  return "$" + value;
+                              } else {
+                                  return "$" + value * 100;
+                              }
+                          },
+                      },
+                  },
+              },
+              elements: {
+                  line: {
+                      borderWidth: 1,
+                  },
+                  point: {
+                      radius: 0,
+                  },
+              },
+              tooltips: {
+                  enabled: true,
+                  mode: "index",
+                  intersect: false,
+              },
+            }
         });
 
         const progressValue = 75;

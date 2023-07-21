@@ -31,7 +31,7 @@
             font-size: 12px;
         }
 
-       
+
 
         .container {
             flex: 1;
@@ -54,7 +54,7 @@
 
         .middle {
             flex-basis: 50%;
-
+            padding: 5vw; padding-top: 5vh; 
 
         }
 
@@ -83,6 +83,12 @@
                 /* Hide the side navbar for smaller screens */
             }
 
+            .container {
+                width: 400px;
+            }
+           
+
+
             /* New styles for the footer */
             .footer {
                 position: fixed;
@@ -96,7 +102,7 @@
             }
 
             .right {
-                margin-bottom: 100px;
+                padding-bottom: 100px;
             }
 
             .container {
@@ -122,6 +128,18 @@
 
             .left {
                 background-color: white;
+          
+            }
+
+            .middle{
+                padding-left: 10vw; 
+                padding-right: 5vw;
+                padding-top: 5vh; 
+            }
+          
+            .right{
+                padding-left: 10vw; 
+                padding-right: 5vw;
             }
 
             #customSelect {
@@ -149,13 +167,17 @@
                 color: white;
                 /* Text color of each option */
             }
+
         }
     </style>
 </head>
 
 <body>
     <div class="sidebar">
-        <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 10px; ">        <img style="width: 50px; border-radius: 25px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYiiQz1h0OtnVOSXhwsCk-pvqeFE1hnjdOceQQPSi3Q&s">
+        <div
+            style="display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 10px; ">
+            <img style="width: 50px; border-radius: 25px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYiiQz1h0OtnVOSXhwsCk-pvqeFE1hnjdOceQQPSi3Q&s">
         </div>
         <li style="margin-bottom: 10vh;"> <a href="#"><span class="material-icons">search</span></a></li>
         <div>
@@ -163,9 +185,9 @@
             <li><a href="#"><span class="material-icons">account_balance</span></a></li>
             <li><a href="#"><span class="material-icons">account_circle</span></a></li>
             <li><a href="#"><span class="material-icons">person</span></a></li>
-    
+
         </div>
-       
+
         <div class="bottom-links">
             <li><a href="#"><span class="material-icons">notifications</span></a></li>
             <li><a href="#"><span class="material-icons">logout</span></a></li>
@@ -173,9 +195,9 @@
     </div>
     </div>
     <div class="container">
-        <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 5vw;">
+        <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 5vw; ;">
 
-            <div class="profile" style="display: flex; align-items: center; ">
+            <div class="profile" style="display: flex; align-items: center ; ">
                 <img style="height: 80px; margin-right: 20px;"
                     src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
                 <div>
@@ -186,7 +208,7 @@
             </div>
 
             <div class="account">
-                <div>
+                <div >
                     <p style="font: bold;">Today</p>
                     <div style="margin-bottom: 10px;">
                         <h2 style="margin: 0 ">$19892</h2>
@@ -206,7 +228,7 @@
                         </div>
                     </div>
                 </div>
-                <select id="customSelect">
+                <select id="customSelect" >
                     <option>Option 1</option>
                     <option>Option 2</option>
                     <option>Option 3</option>
@@ -218,7 +240,8 @@
 
 
             <div class="over">
-                <p class="withover" style="font-weight:600; font-size: 18px;">Recent transactions</p>
+                <p class="withover" style="font-weight:600; font-size: 18px;">Recent
+                    transactions</p>
                 <div class="over-content">
                     <div class="transaction"
                         style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
@@ -255,139 +278,144 @@
 
         </div>
         <div class="middle"
-            style="padding: 5vw; padding-top: 5vh; font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;">
-            <p style="font-size: 12px; font-weight: 600 ;color: #4935FF;">Retirement Income</p>
-            <h4 style="margin-top: 0px;">Starting Year 2057</h4>
-            <div class="income-container">
-                <div class="vertical">
-                    <div class="colored-div color1">
-                        <div class="item">
-                            <h4>$300000</h4>
-                            <p>my goal</p>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="colored-div color2">
-                        <div class="item">
-                            <h4>$59%</h4>
-                            <p>my goal</p>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="colored-div color3">
-                        <div class="item">
-                            <h4>$300</h4>
-                            <p>my goal</p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-                <div class="horizontal">
-                    <div class="colored-div color1">
-                        <div class="item">
-                            <h4>$300000</h4>
-                            <p>my goal</p>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="colored-div color2">
-                        <div class="item">
-                            <h4>59%</h4>
-                            <p>Goal Achived</p>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="colored-div color3">
-                        <div class="item">
-                            <h4>$300</h4>
-                            <p>Estimate Monthely interest</p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-            <div>
-                <canvas id="myChart" width="300" height="150"></canvas> <!-- Adjust width and height here -->
-            </div>
-            <div class="hide">
+            style="font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;">
+            <div class="middle-flex">
                 <div>
-                    <h4>How do i compare to my Peers</h4>
-                    <p>These number represent current goal achivement</p>
+                    <p style="font-size: 12px; font-weight: 600 ;color: #4935FF;">Retirement Income</p>
+                    <h4 style="margin-top: 0px;">Starting Year 2057</h4>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="display: flex; flex-direction: column; width: 150px; justify-content: space-between;">
-                        <div>
-                            <span style="margin-right: 10px;">Age:</span>
-                            <select id="select">
-                                <option value="apple">Apple</option>
-                                <option value="banana">Banana</option>
-                                <option value="orange">Orange</option>
-                                <option value="grape">Grape</option>
-                            </select>
+                
+                <div class="income-container">
+                    <div class="vertical">
+                        <div class="colored-div color1">
+                            <div class="item">
+                                <h4>$300000</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
                         </div>
-                        <div>
-                            <span style="margin-right: 10px;">Salary:</span>
-                            <select id="select">
-                                <option value="apple">Apple</option>
-                                <option value="banana">Banana</option>
-                                <option value="orange">Orange</option>
-                                <option value="grape">Grape</option>
-                            </select>
+                        <div class="clear"></div>
+                        <div class="colored-div color2">
+                            <div class="item">
+                                <h4>$59%</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
                         </div>
-                        <div>
-                            <span style="margin-right: 10px;">Gender:</span>
-                            <select id="select">
-                                <option value="apple">Male</option>
-                                <option value="banana">Female</option>
-                            </select>
+                        <div class="colored-div color3">
+                            <div class="item">
+                                <h4>$300</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horizontal">
+                        <div class="colored-div color1">
+                            <div class="item">
+                                <h4>$300000</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="colored-div color2">
+                            <div class="item">
+                                <h4>59%</h4>
+                                <p>Goal Achived</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="colored-div color3">
+                            <div class="item">
+                                <h4>$300</h4>
+                                <p>Estimate Monthely interest</p>
+                                <hr>
+                            </div>
                         </div>
                     </div>
 
 
-                    <div class="flex-wrapper">
-                        <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart">
-                                <path class="circle-bg"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle-lightblue"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle-blue" stroke-dasharray="30, 100"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">78%</text>
-                            </svg>
-                        </div>
-                        <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart">
-                                <path class="circle-bg"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle-lightblue"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle-blue" stroke-dasharray="30, 100"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">95%</text>
-                            </svg>
-                        </div>
-                        <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart">
-                                <path class="circle-bg"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle-lightblue"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle-blue" stroke-dasharray="30, 100"
-                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage" >59%</text>
-                            </svg>
-                        </div>
-                    </div>
 
                 </div>
+                    <canvas id="myChart" width="300" height="150"></canvas> <!-- Adjust width and height here -->
+                <div class="hide">
+                    <div>
+                        <h4>How do i compare to my Peers</h4>
+                        <p>These number represent current goal achivement</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div
+                            style="display: flex; flex-direction: column; width: 150px; justify-content: space-between;">
+                            <div>
+                                <span style="margin-right: 10px;">Age:</span>
+                                <select id="select">
+                                    <option value="apple">Apple</option>
+                                    <option value="banana">Banana</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="grape">Grape</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span style="margin-right: 10px;">Salary:</span>
+                                <select id="select">
+                                    <option value="apple">Apple</option>
+                                    <option value="banana">Banana</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="grape">Grape</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span style="margin-right: 10px;">Gender:</span>
+                                <select id="select">
+                                    <option value="apple">Male</option>
+                                    <option value="banana">Female</option>
+                                </select>
+                            </div>
+                        </div>
 
 
+                        <div class="flex-wrapper">
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">78%</text>
+                                </svg>
+                            </div>
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">95%</text>
+                                </svg>
+                            </div>
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">59%</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
             </div>
+
         </div>
         <div class="right" style="padding-top: 20px;">
 

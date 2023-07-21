@@ -1,0 +1,20 @@
+.slider-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .slider-container p {
+    margin-right: 10px;
+  }
+  
+  .slider-container #slider {
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  .slider-container #slider-value {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  

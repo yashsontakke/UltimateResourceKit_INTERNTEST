@@ -7,13 +7,7 @@ const employeeContributionValue = document.getElementById("employeeContributionV
 const retirementAgeValue = document.getElementById("retirementAgeValue");
 
 // Add event listeners to update the displayed values when sliders change
-employeeContributionSlider.addEventListener("input", function () {
-  employeeContributionValue.innerText = employeeContributionSlider.value;
-});
 
-retirementAgeSlider.addEventListener("input", function () {
-  retirementAgeValue.innerText = retirementAgeSlider.value;
-});
 
 var ctx = document.getElementById("myChart").getContext("2d");
 var myChart = new Chart(ctx, {
@@ -98,7 +92,7 @@ var myChart = new Chart(ctx, {
 
 // const progressValue = 75;
 document.addEventListener('DOMContentLoaded', function() {
-  const screenSize = 760;
+  const screenSize = 880;
   let footerLinksAdded = false;
 
   // Function to show the corresponding content div

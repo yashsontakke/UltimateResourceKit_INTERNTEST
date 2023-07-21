@@ -78,19 +78,7 @@
       ..............
  
       
-      
-      .form-group {
-        margin-bottom: 10px;
-      }
-      
-      label {
-        font-weight: bold;
-      }
-      input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-      }
+
 
       ..............
       .sidenav {
@@ -175,4 +163,21 @@
   }
   
 }
-..........
+
+        /* Styling the <select> element */
+        #customSelect {
+            background-color: #4935FF; /* Background color */
+            color: white; /* Text color */
+            font-size: 16px; /* Font size */
+            border: 2px solid #4935FF; /* Border color */
+            border-radius: 6px; /* Rounded corners */
+            padding: 8px; /* Spacing inside the <select> element */
+            width: 200px; /* Set the width of the select box */
+            margin-top: 25px;
+        }
+        
+        /* Styling the <option> elements */
+        #customSelect option {
+            background-color: #4935FF; /* Background color of each option */
+            color: white; /* Text color of each option */
+        }

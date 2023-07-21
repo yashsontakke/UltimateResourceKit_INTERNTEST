@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +6,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="style3.css">
 <link rel="stylesheet" href="floatdiv.css">
-
+<link rel="stylesheet" href="slider.css">
+<link rel="stylesheet" href="scroll.css">
+<link rel="stylesheet" href="form.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
 
 <head>
     <title>Responsive Divs</title>
@@ -19,7 +21,7 @@
             padding: 0;
             display: flex;
             font: lora;
-            /* font-family: lora; */
+            font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
         }
 
         .sidebar {
@@ -33,37 +35,45 @@
         .container {
             flex: 1;
             display: flex;
-            border: 2px solid violet;
+            height: 100vh;
             /* flex-wrap: wrap; */
         }
 
         .left {
             flex-basis: 25%;
-            background-color:#FAFAFA;
+            background-color: #FAFAFA;
+
+
+        }
+
+        .account {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
         }
 
         .middle {
             flex-basis: 50%;
-        
- 
+
+
         }
 
         .right {
             flex-basis: 25%;
-      
-            padding-right: 200px;
-
+            padding: 5vw;
+            /* padding-right: 200px; */
         }
 
         .footer {
             display: none
         }
 
-      
-        
-.box {
-  transform: translate(-50%, -50%);
-}
+
+
+        .box {
+            transform: translate(-50%, -50%);
+        }
+
+
 
         @media screen and (max-width: 760px) {
 
@@ -84,11 +94,61 @@
                 align-items: center;
             }
 
+            .right {
+                margin-bottom: 100px;
+            }
+
             .container {
                 flex: 1;
                 display: flex;
                 flex-wrap: nowrap;
                 flex-direction: column;
+            }
+
+            .account {
+                background-color: #FAFAFA;
+                border-radius: 25px;
+                padding-left: 10%;
+                width: 80%;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .balance {
+                display: flex;
+
+            }
+
+
+
+            .left {
+                background-color: white;
+            }
+
+            #customSelect {
+                background-color: #4935FF;
+                /* Background color */
+                color: white;
+                /* Text color */
+                font-size: 16px;
+                /* Font size */
+                border: 2px solid #4935FF;
+                /* Border color */
+                border-radius: 6px;
+                /* Rounded corners */
+                padding: 8px;
+                /* Spacing inside the <select> element */
+                width: 90%;
+                /* Set the width of the select box */
+                margin-top: 25px;
+            }
+
+            /* Styling the <option> elements */
+            #customSelect option {
+                background-color: #4935FF;
+                /* Background color of each option */
+                color: white;
+                /* Text color of each option */
             }
         }
     </style>
@@ -101,67 +161,91 @@
         <li><a href="#"><span class="material-icons">account_balance</span></a></li>
         <li><a href="#"><span class="material-icons">account_circle</span></a></li>
         <li><a href="#"><span class="material-icons">person</span></a></li>
-      
+
         <div class="bottom-links">
             <li><a href="#"><span class="material-icons">account_circle</span></a></li>
             <li><a href="#"><span class="material-icons">person</span></a></li>
-          </div>
-      </div>
+        </div>
+    </div>
     </div>
     <div class="container">
-        <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 20px;">
+        <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 5vw;">
 
             <div class="profile" style="display: flex; align-items: center; ">
                 <img style="height: 80px; margin-right: 20px;"
                     src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
                 <div>
-                    <h2 style="margin: 0;">Hi Mike</h2>
-                    <p style="margin: 0;">Welcome</p>
+                    <h2 style="margin: 0;">Hi Mike,</h2>
+                    <p style="margin: 0 ;font-size: 12px;
+                    color: #888;">Welcome</p>
                 </div>
             </div>
 
-            <div style=" padding-top: 5vh; padding-bottom: 5vh;">
-                <p>Today</p>
-                <div style="margin-bottom: 10px;">
-                    <h2 style="margin: 0 ">$19000</h2>
-                    <p style="margin: 0 ;font-size: 12px;
-                    color: #888;">Account balance</p>
+            <div class="account">
+                <div>
+                    <p style="font: bold;">Today</p>
+                    <div style="margin-bottom: 10px;">
+                        <h2 style="margin: 0 ">$19892</h2>
+                        <p style="margin: 0 ;font-size: 12px;
+                        color: #888;">Account balance</p>
+                    </div>
+                    <div class="balance">
+                        <div style="margin-bottom: 10px; margin-right: 25px;">
+                            <h4 style="margin: 0;">$4000</h4>
+                            <p style="margin: 0; ;font-size: 12px;
+                            color: #888;">year-to-date contributions</p>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <h4 style="margin: 0;">$1892</h4>
+                            <p style="margin: 0; ;font-size: 12px;
+                            color: #888;">Total-interest</p>
+                        </div>
+                    </div>
                 </div>
-                <div style="margin-bottom: 10px;">
-                    <h4 style="margin: 0;">$4000</h4>
-                    <p style="margin: 0; ;font-size: 12px;
-                    color: #888;">year-to-date contributions</p>
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <h4 style="margin: 0;">$1892</h4>
-                    <p style="margin: 0; ;font-size: 12px;
-                    color: #888;">Total-interest</p>
-                </div>
-                
-                    <select>
-                      <option>Option 1</option>
-                      <option>Option 2</option>
-                      <option>Option 3</option>
-                      <option>Option 4</option>
-                      <option>Option 5</option>
-                    </select>
-                  
+                <select id="customSelect">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+
             </div>
-           
-                
-            <div>
-                <p style="font-weight: bold; font-size: 18px;">Recent transactions</p>
-                <div class="transaction" style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                    <div class="date" style="color: #4935FF; font-size: 16px;">2020-00-07</div>
-                    <div>Description: Transfer to Bank-XXX11</div>
-                </div>
-                <div class="transaction" style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                    <div class="date" style="color: #4935FF; font-size: 16px;">203-07-21</div>
-                    <div>Description: Transfer to Bank-J0X11</div>
-                </div>
-                <div class="transaction" style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                    <div class="date" style="color: #4935FF; font-size: 16px;">203-07-21</div>
-                    <div>Description: Transfer to Bank-XXXX11</div>
+
+
+            <div class="over">
+                <p class="withover" style="font-weight: bold; font-size: 18px;">Recent transactions</p>
+                <div class="over-content">
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; font-size: 16px;">2020-00-07</div>
+                        <div>Description: Transfer to Bank-XXX11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; font-size: 16px;">203-07-21</div>
+                        <div>Description: Transfer to Bank-J0X11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; font-size: 16px;">203-07-21</div>
+                        <div>Description: Transfer to Bank-XXXX11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; font-size: 16px;">2020-00-07</div>
+                        <div>Description: Transfer to Bank-XXX11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; font-size: 16px;">203-07-21</div>
+                        <div>Description: Transfer to Bank-J0X11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; font-size: 16px;">203-07-21</div>
+                        <div>Description: Transfer to Bank-XXXX11</div>
+                    </div>
                 </div>
             </div>
 
@@ -176,7 +260,7 @@
                             <h4>$300000</h4>
                             <p>my goal</p>
                             <hr>
-                          </div>
+                        </div>
                     </div>
                     <div class="clear"></div>
                     <div class="colored-div color2">
@@ -184,14 +268,14 @@
                             <h4>$59%</h4>
                             <p>my goal</p>
                             <hr>
-                          </div>
+                        </div>
                     </div>
                     <div class="colored-div color3">
                         <div class="item">
                             <h4>$300</h4>
                             <p>my goal</p>
                             <hr>
-                          </div>
+                        </div>
                     </div>
                 </div>
                 <div class="horizontal">
@@ -217,9 +301,9 @@
                         </div>
                     </div>
                 </div>
-                
 
-                
+
+
             </div>
             <div>
                 <canvas id="myChart" width="300" height="150"></canvas> <!-- Adjust width and height here -->
@@ -300,36 +384,35 @@
 
             </div>
         </div>
-        <div class="right" style="padding:5% ; padding-top: 20px;">
-            <h1>Retirement Strategy</h1>
-            <form>
-                <div class="form-group">
-                    <label for="employeeContribution">Employee Contribution</label>
-                    <!-- Replace input with a slider -->
-                    <input type="range" id="employeeContribution" min="0" max="20" value="12">
-                    <!-- Display the current value of the slider -->
-                    <span id="employeeContributionValue">12</span>%
+        <div class="right" style="padding-top: 20px;">
+
+            <div class="retirement-container">
+                <p>Retirement Strategy</p>
+                <div class="input-container">
+                    <p>Employee Contribution</p>
+                    <div class="slider-container">
+                        <input type="range" id="employee-contribution-slider" min="0" max="100" step="1" value="50">
+                        <span id="employee-contribution-value">50%</span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="retirementAge">Retirement Age</label>
-                    <!-- Replace input with a slider -->
-                    <input type="range" id="retirementAge" min="55" max="75" value="65">
-                    <!-- Display the current value of the slider -->
-                    <span id="retirementAgeValue">65</span>
+                <div class="input-container">
+                    <p>Retirement Age</p>
+                    <div class="slider-container">
+                        <input type="range" id="retirement-age-slider" min="0" max="100" step="1" value="50">
+                        <span id="retirement-age-value">50%</span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Employer Contribution</label>
-                    <!-- Fixed value displayed -->
-                    <p>8.4%</p>
+                <div class="values-container">
+                    <p>Employee Contribution</p>
+                    <p>50%</p>
                 </div>
-                <div class="form-group">
-                    <label>Interest Rate</label>
-                    <!-- Fixed value displayed -->
-                    <p>5%</p>
+                <div class="values-container">
+                    <p>Interest rate</p>
+                    <p>50%</p>
                 </div>
-                <button type="submit">Update</button>
-            </form>
-          
+            </div>
+
+
         </div>
     </div>
     <div class="footer">
@@ -338,7 +421,8 @@
         <li><a href="#"><span class="material-icons">account_balance</span></a></li>
         <li><a href="#"><span class="material-icons">account_circle</span></a></li>
         <li><a href="#"><span class="material-icons">person</span></a></li>
-    </div> 
+    </div>
 </body>
 <script src="script.js"></script>
+
 </html>

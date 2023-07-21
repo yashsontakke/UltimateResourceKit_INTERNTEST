@@ -1,0 +1,35 @@
+/* styles.css */
+
+/* Apply the styles to the container div */
+.retirement-container {
+    width: ;
+}
+
+/* Apply the styles to the paragraph elements */
+.container p {
+    /* Your custom styles for the paragraph elements */
+}
+
+/* Apply the styles to the slider and its value span */
+.slider-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-container input[type="range"] {
+    /* Your custom styles for the input range slider */
+}
+
+.slider-container span {
+    /* Your custom styles for the value span */
+}
+
+/* Apply the styles to the values-container div */
+.values-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.values-container p {
+    /* Your custom styles for the paragraph elements inside the values container */
+}

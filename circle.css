@@ -1,0 +1,61 @@
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 300px;
+  }
+  
+  .single-chart {
+    width: 33%;
+    justify-content: space-around;
+  }
+  
+  .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
+  
+  /* Styles for the circular chart */
+  .single-chart {
+    position: relative;
+    width: 100px; /* Set the desired width of the circular chart */
+    height: 100px; /* Set the desired height of the circular chart */
+  }
+  
+  /* Styles for the circle background */
+  .circle-bg {
+    fill: none;
+    stroke: #e5e5e5; /* Light gray color for the circle background */
+    stroke-width: 3; /* Adjust the stroke width as needed */
+  }
+  
+  /* Styles for the light blue part of the circle */
+  .circle-lightblue {
+    fill: none;
+    stroke: lightblue; /* Light blue color for the circle */
+    stroke-width: 3; /* Adjust the stroke width as needed */
+    /* To create a circular effect, add the following line */
+    transform-origin: center;
+    transform: rotate(-90deg);
+    /* End of circular effect */
+  }
+  
+  /* Styles for the blue part of the circle */
+  .circle-blue {
+    fill: none;
+    stroke: #4935FF; /* Blue color for the circle */
+    stroke-width: 3; /* Adjust the stroke width as needed */
+    /* To create a circular effect, add the following line */
+    transform-origin: center;
+    /* The rotation for the blue part depends on the percentage, so we'll set it dynamically using JavaScript */
+    /* End of circular effect */
+  }
+  
+  /* Styles for the percentage text */
+  .percentage {
+    fill: black; /* Black color for the percentage text */
+    font-size: 6px; /* Adjust the font size as needed */
+    font-weight: normal; /* Set font-weight to "normal" for less bold text */
+  }
+  

@@ -1,114 +1,34 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-/* SIDENAVBAR CSS*/
-.sidenav {
-    height: 100%;
-    width: 70px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+/* Styles for the circular chart */
+.single-chart {
+    position: relative;
+    width: 100px; /* Set the desired width of the circular chart */
+    height: 100px; /* Set the desired height of the circular chart */
   }
   
-  /* Styles for links inside the sidebar (top links) */
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
+  /* Styles for the circle background */
+  .circle-bg {
+    fill: none;
+    stroke: #e5e5e5; /* Light gray color for the circle background */
+    stroke-width: 3; /* Adjust the stroke width as needed */
   }
   
-  /* Styles for the bottom links */
-  .sidenav .bottom-links {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin-bottom: 15%
+  /* Styles for the circle itself */
+  .circle {
+    fill: none;
+    stroke: #4935FF; /* Blue color for the circle */
+    stroke-width: 3; /* Adjust the stroke width as needed */
+    /* To create a circular effect, add the following line */
+    transform-origin: center;
+    transform: rotate(-90deg);
+    /* End of circular effect */
   }
   
-  .sidenav .bottom-links a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
+  /* Styles for the percentage text */
+ /* Styles for the percentage text */
+.percentage {
+    fill: black; /* Black color for the percentage text */
+    font-size: 6px; /* Adjust the font size as needed */
+    font-weight: normal; /* Set font-weight to "normal" for less bold text */
   }
   
-  /* Styles for the links when hovered */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  .footer{
-    display:none
-  }
   
-  @media screen and (max-width: 760px) {
-
-    .sidenav {
-      display: none; /* Hide the side navbar for smaller screens */
-    }
-    /* New styles for the footer */
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background-color: #111;
-    display: flex; /* Use flexbox to arrange content horizontally */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-  }
-
-  .footer a {
-    padding: 6px 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    margin: 0 5px; /* Add spacing between links */
-  }
-}
-
-
-/* MAIN CONTAINER*/
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.left {
-    flex-basis: 25%;
-    background-color: red;
-    height: 100px;
-}
-
-.middle {
-    flex-basis: 50%;
-    background-color: green;
-    height: 100px;
-}
-
-.right {
-    flex-basis: 25%;
-    background-color: blue;
-    height: 100px;
-}
-
-@media screen and (max-width: 760px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .left, .middle, .right {
-        flex-basis: 100%;
-    }
-}

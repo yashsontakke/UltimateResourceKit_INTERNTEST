@@ -10,33 +10,40 @@ const retirementAgeValue = document.getElementById("retirementAgeValue");
 
 
 var ctx = document.getElementById("myChart").getContext("2d");
+
 var myChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels: ["20", "25", "30", "35", "40"],
+    labels: ["20", "25", "30", "35", "40", "45", "50"], // Add more points on the x-axis
     datasets: [
       {
         label: "Employer",
-        data: [10, 15, 20, 25, 30],
-        backgroundColor: "rgba(255, 99, 132, 0.6)",
-        borderColor: "rgba(255, 99, 132, 1)",
+        data: [10, 15, 20, 25, 30, 35, 40], // Add more data points for the Employer dataset
+        backgroundColor: "#0900A3", // Change the color for the Employer dataset
+        borderColor: "#0900A3", // Change the color for the Employer dataset
         borderWidth: 1,
+        barPercentage: 0.4, // Reduce the width of the bars relative to the available space
+        categoryPercentage: 0.5, // Reduce the width of the bars relative to the available space
         stacked: true,
       },
       {
         label: "Employee",
-        data: [5, 10, 15, 20, 25],
-        backgroundColor: "rgba(54, 162, 235, 0.6)",
-        borderColor: "rgba(54, 162, 235, 1)",
+        data: [5, 10, 15, 20, 25, 30, 35], // Add more data points for the Employee dataset
+        backgroundColor: "#4935FF", // Change the color for the Employee dataset
+        borderColor: "#4935FF", // Change the color for the Employee dataset
         borderWidth: 1,
+        barPercentage: 0.4, // Reduce the width of the bars relative to the available space
+        categoryPercentage: 0.5, // Reduce the width of the bars relative to the available space
         stacked: true,
       },
       {
         label: "Total Interest",
-        data: [5, 10, 15, 20, 25],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        data: [5, 10, 15, 20, 25, 30, 35], // Add more data points for the Total Interest dataset
+        backgroundColor: "#99DAD9", // Change the color for the Total Interest dataset
+        borderColor: "#99DAD9", // Change the color for the Total Interest dataset
         borderWidth: 1,
+        barPercentage: 0.4, // Reduce the width of the bars relative to the available space
+        categoryPercentage: 0.5, // Reduce the width of the bars relative to the available space
         stacked: true,
       },
     ],
@@ -71,6 +78,7 @@ var myChart = new Chart(ctx, {
               return "$" + value * 100;
             }
           },
+          stepSize: 5,
         },
       },
     },
@@ -87,11 +95,12 @@ var myChart = new Chart(ctx, {
       mode: "index",
       intersect: false,
     },
-  }
+    responsive: true,
+    maintainAspectRatio: false,
+  },
 });
-
-// const progressValue = 75;
 document.addEventListener('DOMContentLoaded', function() {
+
   const screenSize = 880;
   let footerLinksAdded = false;
 

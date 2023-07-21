@@ -1,9 +1,10 @@
 .sidebar {
-    width: 4%;
+    width: 70px;
     height: 100%;
     position: fixed;
     /* Set the sidebar height to 100% of the viewport height */
     background-color: white;
+
     /* padding-top:50px; */
 }
 .sidebar li {

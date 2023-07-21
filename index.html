@@ -37,14 +37,16 @@
             flex: 1;
             display: flex;
             height: 100vh;
+            background-color: #4935FF;
+            border:2px solid #111;
+            max-width: calc(100vw-70px);
+   
             /* flex-wrap: wrap; */
         }
 
         .left {
             flex-basis: 25%;
             background-color: #FAFAFA;
-
-
         }
 
         .account {
@@ -54,7 +56,8 @@
 
         .middle {
             flex-basis: 50%;
-            padding: 5vw; padding-top: 5vh; 
+            padding: 5vw;
+            padding-top: 5vh;
 
         }
 
@@ -74,24 +77,49 @@
             transform: translate(-50%, -50%);
         }
 
-
+        canvas {
+            height: 40vh;
+        }
 
         @media screen and (max-width: 760px) {
+            canvas {
+                max-width: 100%;
+                height: 80vh;
+                margin: 0 auto;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                background: linear-gradient(-45deg, #FFFFFF, #F0F0F0);
+                background-size: 400% 400%;
+                animation: gradientAnimation 10s linear infinite;
+            }
+
+            @keyframes gradientAnimation {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
 
             .sidebar {
                 display: none;
                 /* Hide the side navbar for smaller screens */
             }
 
-            .maha-container {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: fixed;
-                overflow: auto;
+            /* .container {
+                width: 400px;
             }
-           
+ */
 
 
             /* New styles for the footer */
@@ -111,11 +139,58 @@
             }
 
             .container {
-                flex: 1;
+                /* Set initial styles for the container */
                 display: flex;
-                flex-wrap: nowrap;
                 flex-direction: column;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                /* Adjust the width as per your design */
+                max-width: 400px;
+                /* Optionally, set a maximum width to avoid excessive stretching */
+                background-color: #fff;
+                /* Set your desired container background color */
+                padding: 20px;
+                /* Adjust the padding as per your design */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                /* Optional: Add a shadow effect for visual appeal */
+                font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
+                /* Set your desired font family */
+
+                /* Add additional styles if needed */
+
+                /* On mobile devices, override the width and center the container using media queries */
+                @media only screen and (max-width: 600px) {
+                    width: 90%;
+                    /* Adjust the width for mobile devices */
+                }
+
+                /* Enable vertical scrolling for the container */
+                overflow-y: scroll;
+
+                /* Hide the right scrollbar for the container */
+                scrollbar-width: none;
+                /* Firefox */
+                -ms-overflow-style: none;
+                /* IE 10+ */
             }
+
+            /* Hide the right scrollbar for Webkit (Chrome, Safari, Edge) */
+            .container::-webkit-scrollbar {
+                width: 0.5em;
+            }
+
+            .container::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            .container::-webkit-scrollbar-thumb {
+                background-color: transparent;
+            }
+
+
 
             .account {
                 background-color: #FAFAFA;
@@ -133,18 +208,18 @@
 
             .left {
                 background-color: white;
-          
+
             }
 
-            .middle{
-                padding-left: 10vw; 
-                /* padding-right: 10vw; */
-                padding-top: 5vh; 
+            .middle {
+                padding-left: 10vw;
+                padding-right: 5vw;
+                padding-top: 5vh;
             }
-          
-            .right{
-                padding-left: 10vw; 
-                /* padding-right: 10vw; */
+
+            .right {
+                padding-left: 10vw;
+                padding-right: 5vw;
             }
 
             #customSelect {
@@ -178,7 +253,7 @@
 </head>
 
 <body>
-    <div class="sidebar">
+     <div class="sidebar">
         <div
             style="display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 10px; ">
             <img style="width: 50px; border-radius: 25px;"
@@ -198,271 +273,271 @@
             <li><a href="#"><span class="material-icons">logout</span></a></li>
         </div>
     </div>
-    </div>
-    <div class="maha-container">
-        <div class="container">
-            <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 5vw; ;">
-    
-                <div class="profile" style="display: flex; align-items: center ; ">
-                    <img style="height: 80px; margin-right: 20px;"
-                        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-                    <div>
-                        <h2 style="margin: 0;">Hi Mike,</h2>
+   
+    <div class="container">
+        <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 5vw; ;">
+
+            <div class="profile" style="display: flex; align-items: center ; ">
+                <img style="height: 80px; margin-right: 20px;"
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                <div>
+                    <h2 style="margin: 0;">Hi Mike,</h2>
+                    <p style="margin: 0 ;font-size: 12px;
+                    color: #888;">Welcome</p>
+                </div>
+            </div>
+
+            <div class="account">
+                <div>
+                    <p style="font: bold;">Today</p>
+                    <div style="margin-bottom: 10px;">
+                        <h2 style="margin: 0 ">$19892</h2>
                         <p style="margin: 0 ;font-size: 12px;
-                        color: #888;">Welcome</p>
+                        color: #888;">Account balance</p>
                     </div>
-                </div>
-    
-                <div class="account">
-                    <div >
-                        <p style="font: bold;">Today</p>
+                    <div class="balance">
+                        <div style="margin-bottom: 10px; margin-right: 25px;">
+                            <h4 style="margin: 0;">$4000</h4>
+                            <p style="margin: 0; ;font-size: 12px;
+                            color: #888;">year-to-date contributions</p>
+                        </div>
                         <div style="margin-bottom: 10px;">
-                            <h2 style="margin: 0 ">$19892</h2>
-                            <p style="margin: 0 ;font-size: 12px;
-                            color: #888;">Account balance</p>
-                        </div>
-                        <div class="balance">
-                            <div style="margin-bottom: 10px; margin-right: 25px;">
-                                <h4 style="margin: 0;">$4000</h4>
-                                <p style="margin: 0; ;font-size: 12px;
-                                color: #888;">year-to-date contributions</p>
-                            </div>
-                            <div style="margin-bottom: 10px;">
-                                <h4 style="margin: 0;">$1892</h4>
-                                <p style="margin: 0; ;font-size: 12px;
-                                color: #888;">Total-interest</p>
-                            </div>
-                        </div>
-                    </div>
-                    <select id="customSelect" >
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                        <option>Option 4</option>
-                        <option>Option 5</option>
-                    </select>
-    
-                </div>
-    
-    
-                <div class="over">
-                    <p class="withover" style="font-weight:600; font-size: 18px;">Recent
-                        transactions</p>
-                    <div class="over-content">
-                        <div class="transaction"
-                            style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                            <div class="date" style="color: #4935FF; ">2020-00-07</div>
-                            <div>Description: Transfer to Bank-XXX11</div>
-                        </div>
-                        <div class="transaction"
-                            style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                            <div class="date" style="color: #4935FF; ">203-07-21</div>
-                            <div>Description: Transfer to Bank-J0X11</div>
-                        </div>
-                        <div class="transaction"
-                            style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                            <div class="date" style="color: #4935FF; ">203-07-21</div>
-                            <div>Description: Transfer to Bank-XXXX11</div>
-                        </div>
-                        <div class="transaction"
-                            style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                            <div class="date" style="color: #4935FF; ">2020-00-07</div>
-                            <div>Description: Transfer to Bank-XXX11</div>
-                        </div>
-                        <div class="transaction"
-                            style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                            <div class="date" style="color: #4935FF;">203-07-21</div>
-                            <div>Description: Transfer to Bank-J0X11</div>
-                        </div>
-                        <div class="transaction"
-                            style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
-                            <div class="date" style="color: #4935FF; ">203-07-21</div>
-                            <div>Description: Transfer to Bank-XXXX11</div>
+                            <h4 style="margin: 0;">$1892</h4>
+                            <p style="margin: 0; ;font-size: 12px;
+                            color: #888;">Total-interest</p>
                         </div>
                     </div>
                 </div>
-    
+                <select id="customSelect">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+
             </div>
-            <div class="middle"
-                style="font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;">
-                <div class="middle-flex">
-                    <div>
-                        <p style="font-size: 12px; font-weight: 600 ;color: #4935FF;">Retirement Income</p>
-                        <h4 style="margin-top: 0px;">Starting Year 2057</h4>
+
+
+            <div class="over">
+                <p class="withover" style="font-weight:600; font-size: 18px;">Recent
+                    transactions</p>
+                <div class="over-content">
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; ">2020-00-07</div>
+                        <div>Description: Transfer to Bank-XXX11</div>
                     </div>
-                    
-                    <div class="income-container">
-                        <div class="vertical">
-                            <div class="colored-div color1">
-                                <div class="item">
-                                    <h4>$300000</h4>
-                                    <p>my goal</p>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="colored-div color2">
-                                <div class="item">
-                                    <h4>$59%</h4>
-                                    <p>my goal</p>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class="colored-div color3">
-                                <div class="item">
-                                    <h4>$300</h4>
-                                    <p>my goal</p>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="horizontal">
-                            <div class="colored-div color1">
-                                <div class="item">
-                                    <h4>$300000</h4>
-                                    <p>my goal</p>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class="colored-div color2">
-                                <div class="item">
-                                    <h4>59%</h4>
-                                    <p>Goal Achived</p>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class="colored-div color3">
-                                <div class="item">
-                                    <h4>$300</h4>
-                                    <p>Estimate Monthely interest</p>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-    
-    
-    
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; ">203-07-21</div>
+                        <div>Description: Transfer to Bank-J0X11</div>
                     </div>
-                        <canvas id="myChart" width="300" height="150"></canvas> <!-- Adjust width and height here -->
-                    <div class="hide">
-                        <div>
-                            <h4>How do i compare to my Peers</h4>
-                            <p>These number represent current goal achivement</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <div
-                                style="display: flex; flex-direction: column; width: 150px; justify-content: space-between;">
-                                <div>
-                                    <span style="margin-right: 10px;">Age:</span>
-                                    <select id="select">
-                                        <option value="apple">Apple</option>
-                                        <option value="banana">Banana</option>
-                                        <option value="orange">Orange</option>
-                                        <option value="grape">Grape</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <span style="margin-right: 10px;">Salary:</span>
-                                    <select id="select">
-                                        <option value="apple">Apple</option>
-                                        <option value="banana">Banana</option>
-                                        <option value="orange">Orange</option>
-                                        <option value="grape">Grape</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <span style="margin-right: 10px;">Gender:</span>
-                                    <select id="select">
-                                        <option value="apple">Male</option>
-                                        <option value="banana">Female</option>
-                                    </select>
-                                </div>
-                            </div>
-    
-    
-                            <div class="flex-wrapper">
-                                <div class="single-chart">
-                                    <svg viewBox="0 0 36 36" class="circular-chart">
-                                        <path class="circle-bg"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-lightblue"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-blue" stroke-dasharray="30, 100"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">78%</text>
-                                    </svg>
-                                </div>
-                                <div class="single-chart">
-                                    <svg viewBox="0 0 36 36" class="circular-chart">
-                                        <path class="circle-bg"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-lightblue"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-blue" stroke-dasharray="30, 100"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">95%</text>
-                                    </svg>
-                                </div>
-                                <div class="single-chart">
-                                    <svg viewBox="0 0 36 36" class="circular-chart">
-                                        <path class="circle-bg"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-lightblue"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-blue" stroke-dasharray="30, 100"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">59%</text>
-                                    </svg>
-                                </div>
-                            </div>
-    
-                        </div>
-    
-    
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; ">203-07-21</div>
+                        <div>Description: Transfer to Bank-XXXX11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; ">2020-00-07</div>
+                        <div>Description: Transfer to Bank-XXX11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF;">203-07-21</div>
+                        <div>Description: Transfer to Bank-J0X11</div>
+                    </div>
+                    <div class="transaction"
+                        style="box-shadow: 0 2px 4px rgba(73, 53, 255, 0.5); padding: 10px; margin-bottom: 10px; border-radius: 10px;">
+                        <div class="date" style="color: #4935FF; ">203-07-21</div>
+                        <div>Description: Transfer to Bank-XXXX11</div>
                     </div>
                 </div>
-    
             </div>
-            <div class="right" style="padding-top: 20px;">
-    
-                <div class="retirement-container">
-                    <p>Retirement Strategy</p>
-                    <div class="input-container">
-                        <p>Employee Contribution</p>
-                        <div class="slider-container">
-                            <input type="range" id="employee-contribution-slider" min="0" max="100" step="1" value="50">
-                            <span id="employee-contribution-value">50%</span>
-                        </div>
-                    </div>
-                    <div class="input-container">
-                        <p>Retirement Age</p>
-                        <div class="slider-container">
-                            <input type="range" id="retirement-age-slider" min="0" max="100" step="1" value="50">
-                            <span id="retirement-age-value">50%</span>
-                        </div>
-                    </div>
-                    <div class="values-container">
-                        <p>Employee Contribution</p>
-                        <p>50%</p>
-                    </div>
-                    <div class="values-container">
-                        <p>Interest rate</p>
-                        <p>50%</p>
-                    </div>
-                </div>
-    
-    
-            </div>
+
         </div>
-        <div class="footer">
-            <li><a href="#"><span class="material-icons">search</span></a></li>
-            <li><a href="#"><span class="material-icons">home</span></a></li>
-            <li><a href="#"><span class="material-icons">account_balance</span></a></li>
-            <li><a href="#"><span class="material-icons">account_circle</span></a></li>
-            <li><a href="#"><span class="material-icons">person</span></a></li>
+        <div class="middle" style="font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;">
+            <div class="middle-flex">
+                <div>
+                    <p style="font-size: 12px; font-weight: 600 ;color: #4935FF;">Retirement Income</p>
+                    <h4 style="margin-top: 0px;">Starting Year 2057</h4>
+                </div>
+
+                <div class="income-container">
+                    <div class="vertical">
+                        <div class="colored-div color1">
+                            <div class="item">
+                                <h4>$300000</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="colored-div color2">
+                            <div class="item">
+                                <h4>$59%</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="colored-div color3">
+                            <div class="item">
+                                <h4>$300</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horizontal">
+                        <div class="colored-div color1">
+                            <div class="item">
+                                <h4>$300000</h4>
+                                <p>my goal</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="colored-div color2">
+                            <div class="item">
+                                <h4>59%</h4>
+                                <p>Goal Achived</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="colored-div color3">
+                            <div class="item">
+                                <h4>$300</h4>
+                                <p>Estimate Monthely interest</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- <div style="width: 100%; ">
+                    <canvas id="myChart"></canvas>
+                </div> -->
+                <!-- <canvas id="myChart" width="300" height="150"></canvas>  -->
+                <div class="hide">
+                    <div>
+                        <h4>How do i compare to my Peers</h4>
+                        <p>These number represent current goal achivement</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div
+                            style="display: flex; flex-direction: column; width: 150px; justify-content: space-between;">
+                            <div>
+                                <span style="margin-right: 10px;">Age:</span>
+                                <select id="select">
+                                    <option value="apple">Apple</option>
+                                    <option value="banana">Banana</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="grape">Grape</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span style="margin-right: 10px;">Salary:</span>
+                                <select id="select">
+                                    <option value="apple">Apple</option>
+                                    <option value="banana">Banana</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="grape">Grape</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span style="margin-right: 10px;">Gender:</span>
+                                <select id="select">
+                                    <option value="apple">Male</option>
+                                    <option value="banana">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="flex-wrapper"
+                            style="width: 70%; display: flex; justify-content: space-between; align-items: center;">
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">78%</text>
+                                </svg>
+                            </div>
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">95%</text>
+                                </svg>
+                            </div>
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">59%</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="right" style="padding-top: 20px;">
+
+            <div class="retirement-container">
+                <p>Retirement Strategy</p>
+                <div class="input-container">
+                    <p>Employee Contribution</p>
+                    <div class="slider-container">
+                        <input type="range" id="employee-contribution-slider" min="0" max="100" step="1" value="50">
+                        <span id="employee-contribution-value">50%</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <p>Retirement Age</p>
+                    <div class="slider-container">
+                        <input type="range" id="retirement-age-slider" min="0" max="100" step="1" value="50">
+                        <span id="retirement-age-value">50%</span>
+                    </div>
+                </div>
+                <div class="values-container">
+                    <p>Employee Contribution</p>
+                    <p>50%</p>
+                </div>
+                <div class="values-container">
+                    <p>Interest rate</p>
+                    <p>50%</p>
+                </div>
+            </div>
+
+
         </div>
     </div>
- 
+    <div class="footer">
+        <li><a href="#"><span class="material-icons">search</span></a></li>
+        <li><a href="#"><span class="material-icons">home</span></a></li>
+        <li><a href="#"><span class="material-icons">account_balance</span></a></li>
+        <li><a href="#"><span class="material-icons">account_circle</span></a></li>
+        <li><a href="#"><span class="material-icons">person</span></a></li>
+    </div>
 </body>
 <script src="script.js"></script>
 

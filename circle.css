@@ -1,8 +1,4 @@
-.flex-wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 300px;
-  }
+
   
   .single-chart {
     width: 33%;

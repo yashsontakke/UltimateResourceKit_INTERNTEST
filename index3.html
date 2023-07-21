@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="scroll.css">
 <link rel="stylesheet" href="form.css">
 <link rel="stylesheet" href="circle.css">
+<link rel="stylesheet" href="sidebar.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
@@ -30,13 +31,7 @@
             font-size: 12px;
         }
 
-        .sidebar {
-            width: 5%;
-            height: 100%;
-            position: fixed;
-            /* Set the sidebar height to 100% of the viewport height */
-            background-color: black;
-        }
+       
 
         .container {
             flex: 1;
@@ -160,15 +155,20 @@
 
 <body>
     <div class="sidebar">
-        <li><a href="#"><span class="material-icons">search</span></a></li>
-        <li><a href="#"><span class="material-icons">home</span></a></li>
-        <li><a href="#"><span class="material-icons">account_balance</span></a></li>
-        <li><a href="#"><span class="material-icons">account_circle</span></a></li>
-        <li><a href="#"><span class="material-icons">person</span></a></li>
-
-        <div class="bottom-links">
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 10px; ">        <img style="width: 50px; border-radius: 25px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYiiQz1h0OtnVOSXhwsCk-pvqeFE1hnjdOceQQPSi3Q&s">
+        </div>
+        <li style="margin-bottom: 10vh;"> <a href="#"><span class="material-icons">search</span></a></li>
+        <div>
+            <li><a href="#"><span class="material-icons">home</span></a></li>
+            <li><a href="#"><span class="material-icons">account_balance</span></a></li>
             <li><a href="#"><span class="material-icons">account_circle</span></a></li>
             <li><a href="#"><span class="material-icons">person</span></a></li>
+    
+        </div>
+       
+        <div class="bottom-links">
+            <li><a href="#"><span class="material-icons">notifications</span></a></li>
+            <li><a href="#"><span class="material-icons">logout</span></a></li>
         </div>
     </div>
     </div>

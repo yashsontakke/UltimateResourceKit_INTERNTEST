@@ -1,0 +1,36 @@
+.sidebar {
+    width: 4%;
+    height: 100%;
+    position: fixed;
+    /* Set the sidebar height to 100% of the viewport height */
+    background-color: white;
+    /* padding-top:50px; */
+}
+.sidebar li {
+    list-style: none;
+    margin-bottom:20%;
+    display:flex;
+    justify-content:center;
+    align-item:center;
+}
+/* Styles for the bottom links */
+.sidebar .bottom-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* margin-bottom: 15% */
+  }
+  
+  .sidebar.bottom-links a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* Styles for the links when hovered */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }

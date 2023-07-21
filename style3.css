@@ -1,9 +1,3 @@
-
-    
-   
-    
-    
-..............................
     .income-container {
         display: flex;
         justify-content: space-between;
@@ -24,23 +18,7 @@
         flex: 1; /* Add this to make the items equally distributed horizontally */
         margin: 0 5px; /* Add a small margin between the items for equal distance */
       }
-      ..............
- 
-      
-
-
-      ..............
-      .sidenav {
-        height: 100%;
-        width: 70px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        padding-top: 20px;
-      }
+     
       
       /* Styles for links inside the sidebar (top links) */
       .sidebar a {
@@ -51,27 +29,23 @@
         display: block;
       }
       
-      /* Styles for the bottom links */
-      .sidebar .bottom-links {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        margin-bottom: 15%
-      }
-      
-      .sidebar.bottom-links a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-      }
-      
-      /* Styles for the links when hovered */
-      .sidebar a:hover {
-        color: #f1f1f1;
-      }
+      /* Styling the <select> element */
+      #customSelect {
+        background-color: #4935FF; /* Background color */
+        color: white; /* Text color */
+        font-size: 16px; /* Font size */
+        border: 2px solid #4935FF; /* Border color */
+        border-radius: 6px; /* Rounded corners */
+        padding: 8px; /* Spacing inside the <select> element */
+        width: 200px; /* Set the width of the select box */
+        margin-top: 25px;
+    }
+    
+    /* Styling the <option> elements */
+    #customSelect option {
+        background-color: #4935FF; /* Background color of each option */
+        color: white; /* Text color of each option */
+    }
 
       @media screen and (max-width: 760px) {
 
@@ -113,20 +87,4 @@
   
 }
 
-        /* Styling the <select> element */
-        #customSelect {
-            background-color: #4935FF; /* Background color */
-            color: white; /* Text color */
-            font-size: 16px; /* Font size */
-            border: 2px solid #4935FF; /* Border color */
-            border-radius: 6px; /* Rounded corners */
-            padding: 8px; /* Spacing inside the <select> element */
-            width: 200px; /* Set the width of the select box */
-            margin-top: 25px;
-        }
         
-        /* Styling the <option> elements */
-        #customSelect option {
-            background-color: #4935FF; /* Background color of each option */
-            color: white; /* Text color of each option */
-        }

@@ -1,22 +1,8 @@
-    .income-container {
-        display: flex;
-        justify-content: space-between;
-        /* width: 500px; */
-        flex-direction: row;
-      }
+   
       
-      .second-row {
+      .horizontal{
         display: flex;
-        justify-content: space-between; /* Horizontally align the second-row items */
-        width: 100%; /* Add this to ensure the second-row items fill the entire container width */
-      }
-      .first-row{
-        width:220px;
-      }
-      
-      .item {
-        flex: 1; /* Add this to make the items equally distributed horizontally */
-        margin: 0 5px; /* Add a small margin between the items for equal distance */
+        justify-content:space-between;
       }
      
       
@@ -49,21 +35,7 @@
 
       @media screen and (max-width: 760px) {
 
-.income-container {
-    flex-direction: column; /* Items stack vertically */
-    width:100%;
-  }
-  
-  .item {
-    flex-basis: 100%; /* Each div takes the full width in a new row */
-    width:50%;
-  }
-  
-  .second-row {
-    display: flex;
-    justify-content: space-between; /* Horizontally align the second-row items */
-    width:100%
-  }
+
   /* New styles for the footer */
   .footer {
     position: fixed;

@@ -90,11 +90,28 @@
             /* Add any additional styling for the canvas if needed */
         }
 
+        .ch{
+            display: flex;
+        }
+        .cv{
+            display: none;
+        }
+
 
         @media screen and (max-width: 760px) {
+
+            .ch{
+                display: none;
+            }
+            .cv{
+                display: flex;
+                margin-top: 20px;
+            }
+
             canvas#myChart {
                 width: 250px;
                 max-height: 250px;
+                padding-top: 20px;
                 /* Add any additional styling for the canvas if needed */
             }
 
@@ -374,8 +391,8 @@
                     <h4 style="margin-top: 0px;">Starting Year 2057</h4>
                 </div>
 
-                <div class="income-container">
-                    <div class="vertical">
+                <div class="income-container" >
+                    <div class="vertical" >
                         <div class="colored-div color1" >
                             <div class="item" style="margin-right: 5px;">
                                 <h4>$300000</h4>
@@ -423,44 +440,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="canvas">
+                <div class="canvas" style="margin-top: 25px; margin-bottom: 55px;">
                     <canvas id="myChart"></canvas>
                 </div>
                 <!-- <canvas id="myChart" width="300" height="150"></canvas>  -->
                 <div class="hide">
-                    <div>
-                        <h4>How do i compare to my Peers</h4>
-                        <p>These number represent current goal achivement</p>
+                    <div style="margin: 0; padding: 0;">
+                        <h4 style="margin-bottom: 5px;">How do I compare to my Peers</h4>
+                        <p style="margin-top: 5px; font-size: 12px; color: #888;">These numbers represent current goal achievement</p>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <div
-                            style="display: flex; flex-direction: column; width: 150px; justify-content: space-between;">
+                   
+                    <div class="ch" style="justify-content: space-between;">
+ 
+                        <div style="display: flex; flex-direction: column; width: 150px; justify-content: space-between; font-size: 12px;">
                             <div>
-                                <span style="margin-right: 10px;">Age:</span>
-                                <select id="select">
+                                <span style="margin-right: 10px; font-weight: bold;">Age:</span>
+                                <select id="select" style="border: none; font-size: 12px;">
                                     <option value="apple">Apple</option>
                                     <option value="banana">Banana</option>
                                     <option value="orange">Orange</option>
                                     <option value="grape">Grape</option>
                                 </select>
                             </div>
+                            <hr style="margin: 5px 0;">
                             <div>
-                                <span style="margin-right: 10px;">Salary:</span>
-                                <select id="select">
+                                <span style="margin-right: 10px; font-weight: bold;">Salary:</span>
+                                <select id="select" style="border: none; font-size: 12px;">
                                     <option value="apple">Apple</option>
                                     <option value="banana">Banana</option>
                                     <option value="orange">Orange</option>
                                     <option value="grape">Grape</option>
                                 </select>
                             </div>
+                            <hr style="margin: 5px 0;">
                             <div>
-                                <span style="margin-right: 10px;">Gender:</span>
-                                <select id="select">
+                                <span style="margin-right: 10px; font-weight: bold;font-size: 12px; ">Gender:</span>
+                                <select id="select" style="border: none; font-size: 12px;">
                                     <option value="apple">Male</option>
                                     <option value="banana">Female</option>
                                 </select>
                             </div>
                         </div>
+                        
+                        
+                        
 
 
                         <div class="flex-wrapper"
@@ -501,6 +524,73 @@
                         </div>
 
                     </div>
+
+                    <div class="cv" style="flex-direction: column; justify-content: space-between;">
+                        <div style="display: flex; flex-direction: column; width: 100%; justify-content: space-between; font-size: 12px;">
+                            <div>
+                                <span style="margin-right: 10px; font-weight: bold;">Age:</span>
+                                <select id="select" style="border: none; font-size: 12px;">
+                                    <option value="apple">Apple</option>
+                                    <option value="banana">Banana</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="grape">Grape</option>
+                                </select>
+                            </div>
+                            <hr style="margin: 10px 0;">
+                            <div>
+                                <span style="margin-right: 10px; font-weight: bold;">Salary:</span>
+                                <select id="select" style="border: none; font-size: 12px;">
+                                    <option value="apple">Apple</option>
+                                    <option value="banana">Banana</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="grape">Grape</option>
+                                </select>
+                            </div>
+                            <hr style="margin: 10px 0;">
+                            <div>
+                                <span style="margin-right: 10px; font-weight: bold;font-size: 12px; ">Gender:</span>
+                                <select id="select" style="border: none; font-size: 12px;">
+                                    <option value="apple">Male</option>
+                                    <option value="banana">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="flex-wrapper" style="display: flex; justify-content: space-between; align-items: center;  margin-top: 25px;">
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <!-- Content for the first circular chart -->
+                                    <!-- For example, you can add paths, circles, or other SVG elements here -->
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">78%</text>
+                                </svg>
+                            </div>
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <!-- Content for the second circular chart -->
+                                    <!-- For example, you can add paths, circles, or other SVG elements here -->
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">95%</text>
+                                </svg>
+                            </div>
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <!-- Content for the third circular chart -->
+                                    <!-- For example, you can add paths, circles, or other SVG elements here -->
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">59%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
 
 
                 </div>

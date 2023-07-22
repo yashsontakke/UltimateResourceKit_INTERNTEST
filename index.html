@@ -27,6 +27,8 @@
             font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
         }
 
+
+
         .transaction div {
             font-weight: 500;
             font-size: 12px;
@@ -46,6 +48,9 @@
         .left {
             flex-basis: 25%;
             background-color: #FAFAFA;
+            padding-left: 10vw;
+            padding-top: 5vh;
+            padding-right: 5vw;
 
         }
 
@@ -90,20 +95,45 @@
             /* Add any additional styling for the canvas if needed */
         }
 
-        .ch{
+        .ch {
             display: flex;
         }
-        .cv{
+
+        .cv {
+            display: none;
+        }
+
+        .retirement-container p {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .retirement-container {
+            background-color: #FAFAFA;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .retirement-container .slider-container input[type="range"] {
+            height: 4px;
+            /* Adjust the height as per your preference */
+        }
+
+        .notification-icon{
             display: none;
         }
 
 
+
+
         @media screen and (max-width: 760px) {
 
-            .ch{
+
+            .ch {
                 display: none;
             }
-            .cv{
+
+            .cv {
                 display: flex;
                 margin-top: 20px;
             }
@@ -161,9 +191,12 @@
                 align-items: center;
             }
 
+
+
             .right {
                 padding-bottom: 100px;
             }
+
 
             .container {
                 /* Set initial styles for the container */
@@ -185,7 +218,8 @@
                 /* Optional: Add a shadow effect for visual appeal */
                 font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
                 /* Set your desired font family */
-
+                max-height: calc(100vh - 60px);
+                /* padding-bottom: 70px; */
                 /* Add additional styles if needed */
 
                 /* On mobile devices, override the width and center the container using media queries */
@@ -201,6 +235,7 @@
                 scrollbar-width: none;
                 /* Firefox */
                 -ms-overflow-style: none;
+
                 /* IE 10+ */
             }
 
@@ -235,18 +270,29 @@
 
             .left {
                 background-color: white;
+                position: relative;
+            }
 
+            .notification-icon {
+                display: flex;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                /* Adjust the top and right values as needed to position the icon correctly */
+                /* Add styling for your notification icon, e.g., height, width, background color, etc. */
             }
 
             .middle {
-                padding-left: 10vw;
+                padding-left: 5vw;
                 padding-right: 5vw;
                 padding-top: 5vh;
             }
 
             .right {
-                padding-left: 10vw;
+                padding-left: vw;
                 padding-right: 5vw;
+                background-color: #FAFAFA;
+                border-radius: 50px 50px 0 0;
             }
 
             #customSelect {
@@ -274,7 +320,19 @@
                 color: white;
                 /* Text color of each option */
             }
+            .notification-icon li {
+    display: inline-block; /* Ensure the li element doesn't take full width */
+}
 
+.notification-indicator {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 5px;
+    height: 5px;
+    background-color: #85AFFF; /* Example color for the notification dot */
+    border-radius: 50%; /* To create a circular shape */
+}
         }
     </style>
 </head>
@@ -302,11 +360,15 @@
     </div>
 
     <div class="container">
-        <div class="left" style="padding-left: 10vw; padding-top: 5vh; padding-right: 5vw; ;">
+        <div class="left">
+            <div class="notification-icon">
+                <li style="list-style: none";> <a href="#"><span class="material-icons">notifications</span></a></li>
+                <span class="notification-indicator"></span>
+            </div>
 
             <div class="profile" style="display: flex; align-items: center ; ">
-                <img style="height: 80px; margin-right: 20px;"
-                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                <img style="height: 60px; width: 60px; margin-right: 20px; border-radius: 50px;"
+                    src="https://timesofindia.indiatimes.com/photo/92181656/92181656.jpg?v=3">
                 <div>
                     <h2 style="margin: 0;">Hi Mike,</h2>
                     <p style="margin: 0 ;font-size: 12px;
@@ -391,9 +453,9 @@
                     <h4 style="margin-top: 0px;">Starting Year 2057</h4>
                 </div>
 
-                <div class="income-container" >
-                    <div class="vertical" >
-                        <div class="colored-div color1" >
+                <div class="income-container">
+                    <div class="vertical">
+                        <div class="colored-div color1">
                             <div class="item" style="margin-right: 5px;">
                                 <h4>$300000</h4>
                                 <p>my goal</p>
@@ -401,14 +463,14 @@
                             </div>
                         </div>
                         <div class="clear"></div>
-                        <div class="colored-div color2" >
+                        <div class="colored-div color2">
                             <div class="item" style="margin-right: 5px;">
                                 <h4>$59%</h4>
                                 <p>my goal</p>
                                 <hr>
                             </div>
                         </div>
-                        <div class="colored-div color3"  >
+                        <div class="colored-div color3">
                             <div class="item">
                                 <h4>$300</h4>
                                 <p>my goal</p>
@@ -447,12 +509,14 @@
                 <div class="hide">
                     <div style="margin: 0; padding: 0;">
                         <h4 style="margin-bottom: 5px;">How do I compare to my Peers</h4>
-                        <p style="margin-top: 5px; font-size: 12px; color: #888;">These numbers represent current goal achievement</p>
+                        <p style="margin-top: 5px; font-size: 12px; color: #888;">These numbers represent current goal
+                            achievement</p>
                     </div>
-                   
+
                     <div class="ch" style="justify-content: space-between;">
- 
-                        <div style="display: flex; flex-direction: column; width: 150px; justify-content: space-between; font-size: 12px;">
+
+                        <div
+                            style="display: flex; flex-direction: column; width: 150px; justify-content: space-between; font-size: 12px;">
                             <div>
                                 <span style="margin-right: 10px; font-weight: bold;">Age:</span>
                                 <select id="select" style="border: none; font-size: 12px;">
@@ -481,9 +545,9 @@
                                 </select>
                             </div>
                         </div>
-                        
-                        
-                        
+
+
+
 
 
                         <div class="flex-wrapper"
@@ -526,7 +590,8 @@
                     </div>
 
                     <div class="cv" style="flex-direction: column; justify-content: space-between;">
-                        <div style="display: flex; flex-direction: column; width: 100%; justify-content: space-between; font-size: 12px;">
+                        <div
+                            style="display: flex; flex-direction: column; width: 100%; justify-content: space-between; font-size: 12px;">
                             <div>
                                 <span style="margin-right: 10px; font-weight: bold;">Age:</span>
                                 <select id="select" style="border: none; font-size: 12px;">
@@ -555,15 +620,19 @@
                                 </select>
                             </div>
                         </div>
-                    
-                        <div class="flex-wrapper" style="display: flex; justify-content: space-between; align-items: center;  margin-top: 25px;">
+
+                        <div class="flex-wrapper"
+                            style="display: flex; justify-content: space-between; align-items: center;  margin-top: 25px;">
                             <div class="single-chart">
                                 <svg viewBox="0 0 36 36" class="circular-chart">
                                     <!-- Content for the first circular chart -->
                                     <!-- For example, you can add paths, circles, or other SVG elements here -->
-                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle-lightblue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle-blue" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">78%</text>
                                 </svg>
                             </div>
@@ -571,9 +640,12 @@
                                 <svg viewBox="0 0 36 36" class="circular-chart">
                                     <!-- Content for the second circular chart -->
                                     <!-- For example, you can add paths, circles, or other SVG elements here -->
-                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle-lightblue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle-blue" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">95%</text>
                                 </svg>
                             </div>
@@ -581,16 +653,19 @@
                                 <svg viewBox="0 0 36 36" class="circular-chart">
                                     <!-- Content for the third circular chart -->
                                     <!-- For example, you can add paths, circles, or other SVG elements here -->
-                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle-lightblue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle-blue" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-lightblue"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-blue" stroke-dasharray="30, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="percentage">59%</text>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
 
 
                 </div>
@@ -600,33 +675,38 @@
         <div class="right" style="padding-top: 20px;">
 
             <div class="retirement-container">
-                <p>Retirement Strategy</p>
+                <p style="font-size: 14px; ">Retirement Strategy</p>
                 <div class="input-container">
                     <p>Employee Contribution</p>
                     <div class="slider-container">
                         <input type="range" id="employee-contribution-slider" min="0" max="100" step="1" value="50">
-                        <span id="employee-contribution-value">50%</span>
+                        <span style="font-size: 12px;" id="employee-contribution-value">50%</span>
                     </div>
                 </div>
                 <div class="input-container">
                     <p>Retirement Age</p>
                     <div class="slider-container">
                         <input type="range" id="retirement-age-slider" min="0" max="100" step="1" value="50">
-                        <span id="retirement-age-value">50%</span>
+                        <span style="font-size: 12px;" id="retirement-age-value">50%</span>
                     </div>
                 </div>
+                <hr style="margin-top: 20px; ">
                 <div class="values-container">
                     <p>Employee Contribution</p>
-                    <p>50%</p>
+                    <p>8.4%</p>
                 </div>
                 <div class="values-container">
                     <p>Interest rate</p>
-                    <p>50%</p>
+                    <p>5%</p>
                 </div>
+
+
             </div>
-
-
+            <button
+                style="width: 100%; margin-top: 20px; border: none; border-radius: 10px; background-color: #4935FF; color: white; padding: 10px 20px; font-size: 16px; cursor: pointer;">Update</button>
         </div>
+
+
     </div>
     <div class="footer">
         <li><a href="#"><span class="material-icons">search</span></a></li>

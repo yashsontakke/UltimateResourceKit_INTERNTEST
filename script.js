@@ -1,14 +1,22 @@
-// Get the elements for employee contribution and retirement age sliders
-const employeeContributionSlider = document.getElementById("employeeContribution");
-const retirementAgeSlider = document.getElementById("retirementAge");
+function updateEmployeeContribution() {
+  var employeeSlider = document.getElementById("employee-contribution-slider");
+  var employeeValue = document.getElementById("employee-contribution-value");
+  employeeValue.textContent = employeeSlider.value + "%";
+}
 
-// Get the elements to display the current values
-const employeeContributionValue = document.getElementById("employeeContributionValue");
-const retirementAgeValue = document.getElementById("retirementAgeValue");
+// Function to update the displayed value for Retirement Age
+function updateRetirementAge() {
+  var retirementSlider = document.getElementById("retirement-age-slider");
+  var retirementValue = document.getElementById("retirement-age-value");
+  retirementValue.textContent = retirementSlider.value + "%";
+}
 
-// Add event listeners to update the displayed values when sliders change
+// Add event listeners to the sliders
+var employeeSlider = document.getElementById("employee-contribution-slider");
+employeeSlider.addEventListener("input", updateEmployeeContribution);
 
-
+var retirementSlider = document.getElementById("retirement-age-slider");
+retirementSlider.addEventListener("input", updateRetirementAge);
 var ctx = document.getElementById("myChart").getContext("2d");
 
 var myChart = new Chart(ctx, {
@@ -99,81 +107,6 @@ var myChart = new Chart(ctx, {
     maintainAspectRatio: false,
   },
 });
-document.addEventListener('DOMContentLoaded', function() {
 
-  const screenSize = 880;
-  let footerLinksAdded = false;
-
-  // Function to show the corresponding content div
-  function showContent(contentId) {
-    const allContentDivs = document.querySelectorAll('.content');
-    allContentDivs.forEach(div => {
-      div.style.display = div.id === contentId ? 'block' : 'none';
-    });
-  }
-
-  // Function to add click event listeners to footer links
-  function addFooterLinkListeners() {
-    const homeLink = document.getElementById('homeLink');
-    const balanceLink = document.getElementById('balanceLink');
-    const accountLink = document.getElementById('accountLink');
-
-    homeLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      showContent('homeContent');
-    });
-
-    balanceLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      showContent('balanceContent');
-    });
-
-    accountLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      showContent('accountContent');
-    });
-  }
-
-  // Function to remove click event listeners from footer links
-  function removeFooterLinkListeners() {
-    const homeLink = document.getElementById('homeLink');
-    const balanceLink = document.getElementById('balanceLink');
-    const accountLink = document.getElementById('accountLink');
-
-    homeLink.removeEventListener('click', showContent);
-    balanceLink.removeEventListener('click', showContent);
-    accountLink.removeEventListener('click', showContent);
-  }
-
-  // Function to check screen size and add/remove footer link listeners
-  function updateFooterLinks() {
-    const currentScreenSize = window.innerWidth < screenSize;
-
-    if (currentScreenSize) {
-      // Show homeContent by default when the screen size is below 760px
-      showContent('homeContent');
-    } else {
-      // Show all content divs when the screen size is 760px or larger
-      const allContentDivs = document.querySelectorAll('.content');
-      allContentDivs.forEach(div => {
-        div.style.display = 'block';
-      });
-    }
-
-    if (currentScreenSize && !footerLinksAdded) {
-      addFooterLinkListeners();
-      footerLinksAdded = true;
-    } else if (!currentScreenSize && footerLinksAdded) {
-      removeFooterLinkListeners();
-      footerLinksAdded = false;
-    }
-  }
-
-  // Check screen size and add/remove footer link listeners on page load
-  updateFooterLinks();
-
-  // Add event listener to check screen size and update footer links on window resize
-  window.addEventListener('resize', updateFooterLinks);
-});
 
 

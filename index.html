@@ -25,8 +25,8 @@
             height: 100vh;
             /* font: lora; */
             font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
-        }
 
+        }
 
 
         .transaction div {
@@ -119,7 +119,7 @@
             /* Adjust the height as per your preference */
         }
 
-        .notification-icon{
+        .notification-icon {
             display: none;
         }
 
@@ -143,6 +143,9 @@
                 max-height: 250px;
                 padding-top: 20px;
                 /* Add any additional styling for the canvas if needed */
+            }
+            .allowance{
+                display: none;
             }
 
             body {
@@ -180,15 +183,23 @@
 
 
             /* New styles for the footer */
+
+            
+
             .footer {
                 position: fixed;
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 70px;
-                background-color: #111;
+                height: 80px;
+                background-color: white;
                 display: flex;
                 align-items: center;
+            }
+
+            
+            .footer li{
+                list-style: none;
             }
 
 
@@ -320,19 +331,23 @@
                 color: white;
                 /* Text color of each option */
             }
-            .notification-icon li {
-    display: inline-block; /* Ensure the li element doesn't take full width */
-}
 
-.notification-indicator {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 5px;
-    height: 5px;
-    background-color: #85AFFF; /* Example color for the notification dot */
-    border-radius: 50%; /* To create a circular shape */
-}
+            .notification-icon li {
+                display: inline-block;
+                /* Ensure the li element doesn't take full width */
+            }
+
+            .notification-indicator {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                width: 5px;
+                height: 5px;
+                background-color: #85AFFF;
+                /* Example color for the notification dot */
+                border-radius: 50%;
+                /* To create a circular shape */
+            }
         }
     </style>
 </head>
@@ -362,7 +377,7 @@
     <div class="container">
         <div class="left">
             <div class="notification-icon">
-                <li style="list-style: none";> <a href="#"><span class="material-icons">notifications</span></a></li>
+                <li style="list-style: none" ;> <a href="#"><span class="material-icons">notifications</span></a></li>
                 <span class="notification-indicator"></span>
             </div>
 
@@ -676,18 +691,18 @@
 
             <div class="retirement-container">
                 <p style="font-size: 14px; ">Retirement Strategy</p>
-                <div class="input-container">
+                <div class="input-container" style="margin-bottom: 25px;">
                     <p>Employee Contribution</p>
                     <div class="slider-container">
                         <input type="range" id="employee-contribution-slider" min="0" max="100" step="1" value="50">
-                        <span style="font-size: 12px;" id="employee-contribution-value">50%</span>
+                        <span style="font-size: 12px; font-weight: bold;"  id="employee-contribution-value">50%</span>
                     </div>
                 </div>
                 <div class="input-container">
                     <p>Retirement Age</p>
                     <div class="slider-container">
                         <input type="range" id="retirement-age-slider" min="0" max="100" step="1" value="50">
-                        <span style="font-size: 12px;" id="retirement-age-value">50%</span>
+                        <span style="font-size: 12px; font-weight: bold;" id="retirement-age-value">50%</span>
                     </div>
                 </div>
                 <hr style="margin-top: 20px; ">
@@ -704,17 +719,28 @@
             </div>
             <button
                 style="width: 100%; margin-top: 20px; border: none; border-radius: 10px; background-color: #4935FF; color: white; padding: 10px 20px; font-size: 16px; cursor: pointer;">Update</button>
+                <div class="allowance" style="border-left: 2px solid #4935FF; padding-left: 10px; margin-top: 40px;">
+                    <p style="font-size: 12px; font-weight: 400; margin: 0;">Are you considering</p>
+                    <p style="font-size: 12px; font-weight: 600; margin: 0;">Housing Allowance ?</p>
+            
+                    <p style="font-size: 10px; font-weight: 400; color: #CBCBCB;">limited with reduced interest</p>
+                    <a style="font-size: 8px; font-weight: 600; color: #4935FF;">Learn More ></a>
+            
+                </div>
+        </div>       
+    </div>
+  
+        <div class="footer" style="background: linear-gradient(to right, white, #FAFAFA);  animation: gradientAnimation 5s infinite alternate;">
+            <div style="display: flex; background-color: white; width: 70%; height: 100%; justify-content: space-between; align-items: center; ">
+                <li style="background-color: #4935FF; border-radius: 4px; height: 50px; display: flex ;justify-content: center; align-items: center;" ><a href="#"><span style="color: #FAFAFA;" class="material-icons">home</span></a></li>
+                <li style="border-radius: 4px; height: 50px; display: flex ;justify-content: center; align-items: center;" ><a href="#"><span  class="material-icons">account_balance</span></a></li>
+                <li style="border-radius: 4px; height: 50px; display: flex ;justify-content: center; align-items: center;" ><a href="#"><span class="material-icons">account_circle</span></a></li>
+                <li style="border-radius: 4px; height: 50px; display: flex ;justify-content: center; align-items: center;" ><a href="#"><span  class="material-icons">person</span></a></li>
+                <li style="border-radius: 4px; height: 50px; display: flex ;justify-content: center; align-items: center;" ><a href="#"><span  class="material-icons">search</span></a></li>
+            </div>
         </div>
 
-
-    </div>
-    <div class="footer">
-        <li><a href="#"><span class="material-icons">search</span></a></li>
-        <li><a href="#"><span class="material-icons">home</span></a></li>
-        <li><a href="#"><span class="material-icons">account_balance</span></a></li>
-        <li><a href="#"><span class="material-icons">account_circle</span></a></li>
-        <li><a href="#"><span class="material-icons">person</span></a></li>
-    </div>
+   
 </body>
 <script src="script.js"></script>
 

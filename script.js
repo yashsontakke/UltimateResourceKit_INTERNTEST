@@ -61,15 +61,28 @@ var myChart = new Chart(ctx, {
       title: {
         display: true,
         text: "Contributions Over Time",
+        font: {
+          weight: 'bolder', // Set the title font to bold
+          color: '#111', // Set the title font color to black
+          size:'16px'
+        },
+        align: 'start', // Align the title to the left
+        color: '#111',
       },
     },
-    indexAxis: "x",
+  
     scales: {
       x: {
         stacked: true,
         grid: {
           display: false, // Remove vertical lines
         },
+        ticks: {
+          font: {
+            weight: 'bold',
+            color: 'black' // Set the x-axis labels font color to black
+          }
+        }
       },
       y: {
         stacked: true,
@@ -78,7 +91,10 @@ var myChart = new Chart(ctx, {
           borderDash: [5, 5], // Make horizontal lines dashed
         },
         ticks: {
-          // Use the callback function to format the labels as dollars
+          font: {
+            weight: 'bold',
+            color: 'black' // Set the x-axis labels font color to black
+          },
           callback: function (value, index, values) {
             if (value === 0) {
               return "$" + value;
@@ -106,7 +122,7 @@ var myChart = new Chart(ctx, {
     responsive: true,
     maintainAspectRatio: false,
   },
+  
 });
-
 
 

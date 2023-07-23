@@ -4,7 +4,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 <link rel="stylesheet" href="style3.css">
+<link rel="stylesheet" href="responsive.css">
 <link rel="stylesheet" href="floatdiv.css">
 <link rel="stylesheet" href="slider.css">
 <link rel="stylesheet" href="scroll.css">
@@ -17,340 +19,7 @@
 
 <head>
     <title>Responsive Divs</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            height: 100vh;
-            /* font: lora; */
-            font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
 
-        }
-
-
-        .transaction div {
-            font-weight: 500;
-            font-size: 12px;
-        }
-
-
-
-        .container {
-            flex: 1;
-            display: flex;
-            height: 100%;
-            margin: 0%;
-            padding: 0%;
-            /* flex-wrap: wrap; */
-        }
-
-        .left {
-            flex-basis: 25%;
-            background-color: #FAFAFA;
-            padding-left: 10vw;
-            padding-top: 5vh;
-            padding-right: 5vw;
-
-        }
-
-        .account {
-            padding-top: 5vh;
-            padding-bottom: 5vh;
-        }
-
-        .middle {
-            flex-basis: 50%;
-            padding: 5vw;
-            padding-top: 5vh;
-
-        }
-
-        .right {
-            flex-basis: 25%;
-            padding: 5vw;
-            /* padding-right: 200px; */
-        }
-
-        .footer {
-            display: none
-        }
-
-
-
-        .box {
-            transform: translate(-50%, -50%);
-        }
-
-        canvas {
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        canvas#myChart {
-            width: 300px;
-            height: 300px;
-            /* Add any additional styling for the canvas if needed */
-        }
-
-        .ch {
-            display: flex;
-        }
-
-        .cv {
-            display: none;
-        }
-
-        .retirement-container p {
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        .retirement-container {
-            background-color: #FAFAFA;
-            padding: 12px;
-            border-radius: 10px;
-            margin-top: 35px;
-        }
-
-        .retirement-container .slider-container input[type="range"] {
-            height: 4px;
-            /* Adjust the height as per your preference */
-        }
-
-        .notification-icon {
-            display: none;
-        }
-
-
-
-
-        @media screen and (max-width: 760px) {
-
-
-            .ch {
-                display: none;
-            }
-
-            .cv {
-                display: flex;
-                margin-top: 20px;
-            }
-
-            canvas#myChart {
-                width: 250px;
-                max-height: 250px;
-                padding-top: 20px;
-                /* Add any additional styling for the canvas if needed */
-            }
-            .allowance{
-                display: none;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                height: 100vh;
-                background: linear-gradient(-45deg, #FFFFFF, #F0F0F0);
-                background-size: 400% 400%;
-                animation: gradientAnimation 10s linear infinite;
-            }
-
-            @keyframes gradientAnimation {
-                0% {
-                    background-position: 0% 50%;
-                }
-
-                50% {
-                    background-position: 100% 50%;
-                }
-
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
-
-            .sidebar {
-                display: none;
-                /* Hide the side navbar for smaller screens */
-            }
-
-            /* .container {
-                width: 400px;
-            }
- */
-
-
-            /* New styles for the footer */
-
-            
-
-            .footer {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 80px;
-                background-color: white;
-                display: flex;
-                align-items: center;
-            }
-
-            
-            .footer li{
-                list-style: none;
-            }
-
-
-
-            .right {
-                padding-bottom: 100px;
-            }
-
-
-            .container {
-                /* Set initial styles for the container */
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 80%;
-                /* Adjust the width as per your design */
-                max-width: 400px;
-                /* Optionally, set a maximum width to avoid excessive stretching */
-                background-color: #fff;
-                /* Set your desired container background color */
-                padding: 20px;
-                /* Adjust the padding as per your design */
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                /* Optional: Add a shadow effect for visual appeal */
-                font-family: 'Roboto', 'Helvetica', 'Padauk', sans-serif;
-                /* Set your desired font family */
-                max-height: calc(100vh - 60px);
-                /* padding-bottom: 70px; */
-                /* Add additional styles if needed */
-
-                /* On mobile devices, override the width and center the container using media queries */
-                @media only screen and (max-width: 600px) {
-                    width: 90%;
-                    /* Adjust the width for mobile devices */
-                }
-
-                /* Enable vertical scrolling for the container */
-                overflow-y: scroll;
-
-                /* Hide the right scrollbar for the container */
-                scrollbar-width: none;
-                /* Firefox */
-                -ms-overflow-style: none;
-
-                /* IE 10+ */
-            }
-
-            /* Hide the right scrollbar for Webkit (Chrome, Safari, Edge) */
-            .container::-webkit-scrollbar {
-                width: 0.5em;
-            }
-
-            .container::-webkit-scrollbar-track {
-                background-color: transparent;
-            }
-
-            .container::-webkit-scrollbar-thumb {
-                background-color: transparent;
-            }
-
-
-
-            .account {
-                background-color: #FAFAFA;
-                border-radius: 25px;
-                padding-left: 10%;
-                width: 80%;
-                margin-top: 30px;
-                margin-bottom: 20px;
-            }
-
-            .balance {
-                display: flex;
-                margin-top: 30px;
-            }
-
-            .left {
-                background-color: white;
-                position: relative;
-            }
-
-            .notification-icon {
-                display: flex;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                /* Adjust the top and right values as needed to position the icon correctly */
-                /* Add styling for your notification icon, e.g., height, width, background color, etc. */
-            }
-
-            .middle {
-                padding-left: 5vw;
-                padding-right: 5vw;
-                padding-top: 5vh;
-            }
-
-            .right {
-                padding-left: vw;
-                padding-right: 5vw;
-                background-color: #FAFAFA;
-                border-radius: 50px 50px 0 0;
-            }
-
-            #customSelect {
-                background-color: #4935FF;
-                /* Background color */
-                color: white;
-                /* Text color */
-                font-size: 16px;
-                /* Font size */
-                border: 2px solid #4935FF;
-                /* Border color */
-                border-radius: 6px;
-                /* Rounded corners */
-                padding: 8px;
-                /* Spacing inside the <select> element */
-                width: 90%;
-                /* Set the width of the select box */
-                margin-top: 25px;
-            }
-
-            /* Styling the <option> elements */
-            #customSelect option {
-                background-color: #4935FF;
-                /* Background color of each option */
-                color: white;
-                /* Text color of each option */
-            }
-
-            .notification-icon li {
-                display: inline-block;
-                /* Ensure the li element doesn't take full width */
-            }
-
-            .notification-indicator {
-                position: absolute;
-                top: -5px;
-                right: -5px;
-                width: 5px;
-                height: 5px;
-                background-color: #85AFFF;
-                /* Example color for the notification dot */
-                border-radius: 50%;
-                /* To create a circular shape */
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -497,21 +166,21 @@
                     <div class="horizontal">
                         <div class="colored-div color1">
                             <div class="item">
-                                <h4>$300000</h4>
+                                <h2>$300000</h2>
                                 <p>my goal</p>
                                 <hr>
                             </div>
                         </div>
                         <div class="colored-div color2" style="margin-left: 5px;">
                             <div class="item">
-                                <h4>59%</h4>
+                                <h2>59%</h2>
                                 <p>Goal Achived</p>
                                 <hr>
                             </div>
                         </div>
                         <div class="colored-div color3" style="margin-left: 5px;">
                             <div class="item">
-                                <h4>$300</h4>
+                                <h2>$300</h2>
                                 <p>Est Monthely interest</p>
                                 <hr>
                             </div>
